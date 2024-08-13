@@ -1,67 +1,53 @@
 package com.example.currencyconverter.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 import java.math.BigDecimal;
-import java.util.Date;
 
-@Entity
+
 public class Currency {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String symbol;
-    private String name;
-    private Date searchedDate;
-    private BigDecimal value;
+    private String from;
+    private String to;
+    private BigDecimal currencyValue;
 
     public Currency() {
     }
 
-    public Currency(String symbol, String name, Date searchedDate, BigDecimal value) {
-        this.symbol = symbol;
-        this.name = name;
-        this.searchedDate = searchedDate;
-        this.value = value;
+    public Currency(String from, String to, BigDecimal currencyValue) {
+        this.from = from;
+        this.to = to;
+        this.currencyValue = currencyValue;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
+    public String getFrom() {
+        return from;
     }
 
-    public String getName() {
-        return name;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTo() {
+        return to;
     }
 
-    public Date getSearchedDate() {
-        return searchedDate;
+    public void setTo(String to) {
+        this.to = to;
     }
 
-    public void setSearchedDate(Date searchedDate) {
-        this.searchedDate = searchedDate;
+    public BigDecimal getCurrencyValue() {
+        return currencyValue;
     }
 
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    public void setValue(BigDecimal value) {
-        this.value = value;
+    public void setCurrencyValue(BigDecimal currencyValue) {
+        this.currencyValue = currencyValue;
     }
 }
